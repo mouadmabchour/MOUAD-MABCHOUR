@@ -1,0 +1,62 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Spectral', ui-serif, Georgia, serif;
+  --font-display: 'Anton', sans-serif;
+  
+  --color-brand-paper: #FFF4F2;
+  --color-brand-ink: #1A1A1A;
+  --color-brand-muted: #5D5D5D;
+  --color-brand-accent: #FF5E7E;
+  --color-brand-border: #FFD9D4;
+  
+  --color-sunset-pink: #FF8F8F;
+  --color-sunset-orange: #FFB37E;
+  --color-sunset-lavender: #C2AFFF;
+  --color-sunset-blue: #4D7BFF;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-paper text-brand-ink font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display uppercase tracking-wider;
+  }
+}
+
+.text-layered-shadow {
+  text-shadow: 
+    0 4px 0 var(--color-sunset-pink),
+    0 8px 0 var(--color-sunset-orange),
+    0 12px 0 var(--color-sunset-lavender),
+    0 16px 0 var(--color-sunset-blue);
+}
+
+.sky-gradient {
+  background: linear-gradient(to bottom, #FF8F8F 0%, #FFB37E 30%, #C2AFFF 60%, #4D7BFF 100%);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-sunset-pink/40 rounded-full hover:bg-sunset-pink transition-colors;
+}
